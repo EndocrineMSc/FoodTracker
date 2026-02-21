@@ -14,7 +14,7 @@ private val LightColorScheme = lightColorScheme(
     background = LightBackground,
     surfaceBright = OffwhiteBackground,
     surface = Surface,
-    onSurface = PrimaryText,
+    onSurface = OnPrimary,
     error = ErrorRed,
     onError = LightBackground
 )

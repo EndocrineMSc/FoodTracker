@@ -8,61 +8,68 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.foodtracker.R
 
-// 1. Define the Family using the files you added to res/font
-val OutfitFontFamily = FontFamily(
-    Font(R.font.outfit_regular, FontWeight.Normal),
-    Font(R.font.outfit_medium, FontWeight.Medium),
-    Font(R.font.outfit_semibold, FontWeight.SemiBold),
-    Font(R.font.outfit_bold, FontWeight.Bold)
+val GaeguFontFamily = FontFamily(
+    Font(R.font.gaegu_light, FontWeight.Normal),
+    Font(R.font.gaegu_regular, FontWeight.SemiBold),
+    Font(R.font.gaegu_bold, FontWeight.Bold),
 )
 
 // 2. Set up the Material 3 Typography Scale
 val Typography = Typography(
+    // Used for the big "Remaining Calories" number
+    displayLarge = TextStyle(
+        fontFamily = GaeguFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 48.sp,
+        lineHeight = 56.sp,
+        letterSpacing = (-1).sp,
+        color = OnPrimary
+    ),
 
-    // For large displays like the main calorie number (e.g., "1,450")
+    // Used for screen headers like "Today's Summary"
     headlineLarge = TextStyle(
-        fontFamily = OutfitFontFamily,
+        fontFamily = GaeguFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 50.sp,
+        lineHeight = 40.sp,
+        letterSpacing = (-0.5).sp,
+        color = OnPrimary
+    ),
+
+    // Used for card titles (e.g., "Lunch", "Protein")
+    titleMedium = TextStyle(
+        fontFamily = GaeguFontFamily,
         fontWeight = FontWeight.Bold,
         fontSize = 32.sp,
-        lineHeight = 40.sp,
-        letterSpacing = (-0.5).sp, // Tightened for a premium look
-        color = PrimaryText
-    ),
-
-    // For Nutrient Names (e.g., "Protein", "Vitamin C")
-    titleMedium = TextStyle(
-        fontFamily = OutfitFontFamily,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 18.sp,
         lineHeight = 24.sp,
-        color = PrimaryText
+        color = OnPrimary
     ),
 
-    // For category headers (e.g., "VITAMINE")
+    // Used for nutrient labels and small CAPS buttons
     labelMedium = TextStyle(
-        fontFamily = OutfitFontFamily,
+        fontFamily = GaeguFontFamily,
         fontWeight = FontWeight.Bold,
-        fontSize = 12.sp,
+        fontSize = 22.sp,
         lineHeight = 16.sp,
-        letterSpacing = 0.5.sp, // Spread out for that "Header" feel
-        color = PrimaryText.copy(alpha = 0.6f)
+        letterSpacing = (-2).sp,
+        color = OnPrimary
     ),
 
-    // General body text for values (e.g., "85g / 120g")
+    // Default text for list items or descriptions
     bodyLarge = TextStyle(
-        fontFamily = OutfitFontFamily,
+        fontFamily = GaeguFontFamily,
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        color = PrimaryText
+        color = OnPrimary
     ),
 
-    // Smaller secondary text
+    // Secondary information (e.g., "1,800 kcal goal")
     bodySmall = TextStyle(
-        fontFamily = OutfitFontFamily,
+        fontFamily = GaeguFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 12.sp,
-        lineHeight = 16.sp,
-        color = PrimaryText.copy(alpha = 0.7f)
+        fontSize = 13.sp,
+        lineHeight = 18.sp,
+        color = SecondaryText
     )
 )

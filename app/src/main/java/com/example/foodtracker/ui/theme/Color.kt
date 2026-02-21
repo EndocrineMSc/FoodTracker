@@ -7,7 +7,7 @@ private object Palette {
     val Orange50 = Color(0xFFFDF6EF)
     val Orange100 = Color(0xFFFBEAD9)
     val Orange200 = Color(0xFFF6D1B2)
-    val Orange300 = Color(0xFFF0B281)
+    val Orange300 = Color(0xFFF0A04B)
     val Orange400 = Color(0xFFEA894D)
     val Orange500 = Color(0xFFE56E31)
     val Orange600 = Color(0xFFD65120)
@@ -29,13 +29,14 @@ private object Palette {
 
     // Roses (Protein - Warm Strength)
     val Rose50 = Color(0xFFFFF1F2)
-    val Rose500 = Color(0xFFF43F5E)
+    val Rose500 = Color(0xFFED7966)
     val Rose600 = Color(0xFFE11D48)
 
     // Emeralds (Fiber - Success/Natural)
-    val Emerald50 = Color(0xFFECFDF5)
+    val Emerald50 = Color(0xFFE1EEDD)
     val Emerald500 = Color(0xFF10B981)
     val Emerald600 = Color(0xFF059669)
+    val Emerald900 = Color(0xFF183A1D)
 
     // Blues (Info)
     val Blue500 = Color(0xFF3B82F6)
@@ -53,6 +54,10 @@ private object Palette {
     val Gray200 = Color(0xFFE5E7EB)
     val Gray700 = Color(0xFF374151)
     val Gray900 = Color(0xFF111827)
+
+    // Yellows
+    val Yellow300 = Color(0xFFFEFBE9)
+    val Yellow500 = Color(0xFFF6c453)
 }
 
 // Semantic Colors for Status and Information
@@ -62,22 +67,21 @@ val WarningOrange = Palette.Orange400
 val ErrorRed = Palette.Rose600
 
 // Accent Colors for Nutritional Data (Tailwind-Mapped)
-val ColorCalories = Palette.Orange600
-val ColorFat = Palette.Teal500
-val ColorCarbs = Palette.Amber500
-val ColorProtein = Palette.Rose500
-val ColorFiber = Palette.Violet500
+val ColorCalories = Palette.Rose500
+val ColorFat = Palette.Yellow500
+val ColorCarbs = Palette.Emerald50
+val ColorProtein = Palette.Orange300
+val ColorFiber = Palette.Emerald900
 
 // Neutral Colors for Text and Backgrounds
-val PrimaryText = Palette.Gray900
 val SecondaryText = Palette.Gray200
-val LightBackground = Palette.Gray200
+val LightBackground = Palette.Yellow300
 val OffwhiteBackground = Palette.Gray50
 
 // Material Colors
 val Primary = Palette.Orange600
 val Secondary = Palette.Teal600
-val OnPrimary = Color.White
+val OnPrimary = Palette.Gray900
 val PrimaryContainer = Palette.Orange100
 val OnPrimaryContainer = Palette.Orange900
 val Surface = Palette.Orange50

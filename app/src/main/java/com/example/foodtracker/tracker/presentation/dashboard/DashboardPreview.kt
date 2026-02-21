@@ -3,6 +3,7 @@ package com.example.foodtracker.tracker.presentation.dashboard
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.foodtracker.ui.theme.ColorCalories
 import com.example.foodtracker.ui.theme.ColorCarbs
 import com.example.foodtracker.ui.theme.ColorFat
@@ -14,38 +15,34 @@ import com.example.foodtracker.ui.theme.FoodTrackerTheme
 @Composable
 fun DashboardPreview(modifier: Modifier = Modifier) {
     val state = DashboardState(
-        caloricState = DashboardBarState(
-            name = "Kalorien",
+        caloricState = NutrientDonutState(
             unit = "kcal",
             actual = 1450f,
             target = 2000f,
             isGoodOverflow = false,
-            color = ColorCalories
+            color = ColorCalories,
+            size = 200.dp
         ),
-        proteinState = DashboardBarState(
-            name = "Protein",
+        proteinState = NutrientDonutState(
             unit = "g",
             actual = 85f,
             target = 120f,
             color = ColorProtein
         ),
-        carbState = DashboardBarState(
-            name = "Kohlenhydrate",
+        carbState = NutrientDonutState(
             unit = "g",
             actual = 180f,
             target = 250f,
             color = ColorCarbs
         ),
-        fatState = DashboardBarState(
-            name = "Fette",
+        fatState = NutrientDonutState(
             unit = "g",
             actual = 45f,
             target = 70f,
             isGoodOverflow = false,
             color = ColorFat
         ),
-        fiberState = DashboardBarState(
-            name = "Ballaststoffe",
+        fiberState = NutrientDonutState(
             unit = "g",
             actual = 18f,
             target = 30f,

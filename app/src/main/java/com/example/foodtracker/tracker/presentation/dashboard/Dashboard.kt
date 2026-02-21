@@ -1,55 +1,88 @@
 package com.example.foodtracker.tracker.presentation.dashboard
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme.colorScheme
+import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.unit.dp
-import com.example.foodtracker.core.presentation.AppHeader
 
 @Composable
 fun Dashboard(modifier: Modifier = Modifier, state: DashboardState = DashboardState()) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .padding(horizontal = 16.dp, vertical = 24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Calories",
+            style = typography.headlineLarge
+        )
+        Spacer(modifier = Modifier.height(20.dp))
+        NutrientDonut(state = state.caloricState)
+        Spacer(modifier = Modifier.height(50.dp))
         Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 12.dp)
+            modifier = Modifier.fillMaxWidth()
         ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .shadow(10.dp, spotColor = colorScheme.onSurface, shape = RoundedCornerShape(10))
-                    .background(colorScheme.background, shape = RoundedCornerShape(10))
-                    .padding(horizontal = 8.dp, vertical = 6.dp),
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceAround
             ) {
-                DashboardBar(state = state.caloricState)
-                Spacer(modifier = Modifier.height(12.dp))
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "Protein",
+                        style = typography.titleMedium
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    NutrientDonut(state = state.proteinState)
+                }
 
-                Spacer(modifier = Modifier.height(8.dp))
 
-                DashboardBar(state = state.proteinState)
-                Spacer(modifier = Modifier.height(6.dp))
 
-                DashboardBar(state = state.carbState)
-                Spacer(modifier = Modifier.height(6.dp))
-
-                DashboardBar(state = state.fatState)
-                Spacer(modifier = Modifier.height(6.dp))
-
-                DashboardBar(state = state.fiberState)
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "Fiber",
+                        style = typography.titleMedium
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    NutrientDonut(state = state.fiberState)
+                }
             }
+            Spacer(modifier = Modifier.height(50.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceAround
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "Fat",
+                        style = typography.titleMedium
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    NutrientDonut(state = state.fatState)
+                }
 
-            Spacer(modifier = Modifier.height(8.dp))
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "Carbs",
+                        style = typography.titleMedium
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    NutrientDonut(state = state.carbState)
+                }
+            }
         }
+
+        Spacer(modifier = Modifier.height(8.dp))
     }
 }

@@ -25,9 +25,10 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.unit.dp
-import com.example.foodtracker.ui.theme.ColorGoalExceeded
+import com.example.foodtracker.ui.theme.ErrorRed
+import com.example.foodtracker.ui.theme.SecondaryText
 
-val ColorScheme @Composable get() = MaterialTheme.colorScheme
+val colorScheme @Composable get() = MaterialTheme.colorScheme
 
 @Composable
 fun DashboardBar(
@@ -56,12 +57,12 @@ fun DashboardBar(
 
     val isDone = state.progress >= 1f
     val bgColor = if (!state.isOverLimit || state.isGoodOverflow) {
-        ColorScheme.primaryContainer
+        colorScheme.primaryContainer
     } else {
-        ColorGoalExceeded
+        ErrorRed
     }
     val fillColor = state.color
-    val shimmerColor = ColorScheme.onPrimary
+    val shimmerColor = colorScheme.onPrimary
 
     val sheenBrush = Brush.linearGradient(
         colors = listOf(
@@ -112,7 +113,7 @@ fun DashboardBar(
             Text(
                 text = "$actual / $target ${state.unit}",
                 style = MaterialTheme.typography.labelSmall,
-                color = ColorScheme.onPrimaryContainer
+                color = colorScheme.onSecondary
             )
         }
     }

@@ -26,7 +26,7 @@ val Typography = Typography(
         fontSize = 32.sp,
         lineHeight = 40.sp,
         letterSpacing = (-0.5).sp, // Tightened for a premium look
-        color = DeepCocoa
+        color = PrimaryText
     ),
 
     // For Nutrient Names (e.g., "Protein", "Vitamin C")
@@ -35,7 +35,7 @@ val Typography = Typography(
         fontWeight = FontWeight.SemiBold,
         fontSize = 18.sp,
         lineHeight = 24.sp,
-        color = DeepCocoa
+        color = PrimaryText
     ),
 
     // For category headers (e.g., "VITAMINE")
@@ -45,7 +45,7 @@ val Typography = Typography(
         fontSize = 12.sp,
         lineHeight = 16.sp,
         letterSpacing = 0.5.sp, // Spread out for that "Header" feel
-        color = DeepCocoa.copy(alpha = 0.6f)
+        color = PrimaryText.copy(alpha = 0.6f)
     ),
 
     // General body text for values (e.g., "85g / 120g")
@@ -54,7 +54,7 @@ val Typography = Typography(
         fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
         lineHeight = 24.sp,
-        color = DeepCocoa
+        color = PrimaryText
     ),
 
     // Smaller secondary text
@@ -63,6 +63,6 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
         lineHeight = 16.sp,
-        color = DeepCocoa.copy(alpha = 0.7f)
+        color = PrimaryText.copy(alpha = 0.7f)
     )
 )
